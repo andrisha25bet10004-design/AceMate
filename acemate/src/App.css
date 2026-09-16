@@ -680,9 +680,12 @@ input {
   position: absolute;
 
   left: 3px;
-  top: 78px;
+  bottom: 78px;
+  top: auto;
 
   width: 345px;
+  max-height: calc(100vh - 140px);
+
   padding: 8px;
 
   background: #191919;
@@ -691,7 +694,10 @@ input {
 
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 
-  z-index: 50;
+  z-index: 200;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
@@ -701,26 +707,27 @@ input {
 
 .menu-option {
   width: 100%;
-  min-height: 66px;
+  min-height: 0;
+  height: auto;
 
   display: flex;
   align-items: center;
-
   gap: 12px;
 
-  padding: 9px;
+  padding: 10px 9px;
 
   border: none;
-
   border-radius: 11px;
 
   background: transparent;
-
   color: #eee;
 
   text-align: left;
-
   cursor: pointer;
+}
+
+.menu-option:hover {
+  background: #2a2a2d;
 }
 
 .menu-option:hover {
@@ -919,6 +926,8 @@ input {
   width: min(760px, 80%);
 
   margin: 0 auto 25px;
+    position: relative;
+  z-index: 100;
 }
 
 .chat-composer {
